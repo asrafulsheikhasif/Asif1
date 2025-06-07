@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asif's Personal Website</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body, html {font-family: 'Segoe UI', sans-serif; background: black; color: white; overflow-x: hidden;}
+    canvas {position: fixed; top: 0; left: 0; z-index: 0;}#overlay {
+  position: relative;
+  z-index: 10;
+  padding-top: 60px;
+  text-align: center;
+}
+
+h1 {font-size: 2.5rem; text-shadow: 0 0 10px #0ff;}
+h2 {margin-top: 40px; color: #0ff; border-bottom: 1px solid #0ff; display: inline-block; padding-bottom: 5px;}
+p, li {margin: 10px 0; color: #ccc;}
+
+.info-section {max-width: 800px; margin: auto; text-align: left; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin-bottom: 30px;}
+.info-section ul {padding-left: 20px;}
+
+.photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #0ff;
+  margin-bottom: 20px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+}
+
+.gallery img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  margin: 0 10px;
+  animation: fade 3s infinite alternate;
+}
+
+@keyframes fade {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.social-buttons a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.fb {background: #3b5998;}
+.yt {background: #FF0000;}
+.ig {background: #C13584;}
+.tw {background: #1DA1F2;}
+.tt {background: #000000;}
+
+.contact-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background: #0f6f;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #0ff;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body><div id="overlay">
+  <img class="photo" src="https://asrafulsheikhasif.github.io/Asif/photo3.webp" alt="Asif's Photo">
+  <h1>Asraful Sheikh Asif</h1>
+  <p>I'm Asraful Sheikh Asif, a creative and dedicated individual with skills in graphics design, development, content creation, and project planning. I'm passionate about learning, building, and helping others through digital work. I believe in growth, creativity, and making a difference online.
+</p>  <div class="info-section">
+    <h2>Personal Information</h2>
+    <ul>
+      <li><strong>Name:</strong> Asraful Sheikh Asif</li>
+      <li><strong>Date of Birth:</strong> 27 December, 2004</li>
+      <li><strong>Relationship:</strong> Single ❤️</li>
+      <li><strong>Family Members:</strong> Mother, Father & Sister</li>
+    </ul>
+  </div>  <div class="info-section">
+    <h2>Education</h2>
+    <p>SSC, HSC, BBA (Accounting)</p>
+  </div>  <div class="info-section">
+    <h2>Skills</h2>
+    <p>Graphics designer, Data entry, Developer, Marketing, Content creator, Microsoft Office expert, Games TOPUP, Planning for projects, Others</p>
+  </div>  <div class="info-section">
+    <h2>Hobbies</h2>
+    <p>Football, Cricket, Drawings, Play games</p>
+  </div>  <div class="info-section">
+    <h2>Social Media</h2>
+    <div class="social-buttons">
+      <a class="fb" href="https://www.facebook.com/share/19Cg2PY1EQ/" target="_blank">Facebook</a>
+      <a class="yt" href="https://www.youtube.com/@watch_with_asif" target="_blank">YouTube</a>
+      <a class="ig" href="https://www.instagram.com/1___asif___1?igsh=ZngxZnkzemd6ODRt" target="_blank">Instagram</a>
+      <a class="tw" href="https://x.com/1___asif___1?t=4y8-CoRc7BSz77OBGr-uCg&s=09" target="_blank">Twitter</a>
+      <a class="tt" href="https://www.tiktok.com/@bd_71asif?_t=ZS-8x0ZC9OnBdS&_r=1" target="_blank">TikTok</a>
+    </div>
+  </div>  <div class="info-section">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="https://asrafulsheikhasif.github.io/Asif/image2.jpg" alt="Gallery 1">
+      <img src="https://asrafulsheikhasif.github.io/Asif/photo3.webp" alt="Gallery 2">
+      <img src="https://asrafulsheikhasif.github.io/Asif/photo2.jpg" alt="Gallery 3">
+    </div>
+  </div>  <div class="info-section">
+    <h2>Contact</h2>
+    <div class="contact-buttons">
+      <a href="tel:01887711147">📞 Call Me</a>
+      <a href="https://wa.me/8801887711147" target="_blank">💬 WhatsApp</a>
+    </div>
+  </div>
+</div><footer>
+  Developer by Asraful Sheikh Asif
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script><script>
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  const particles = 3000;
+  const geometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(particles * 3);
+  const colors = new Float32Array(particles * 3);
+
+  for (let i = 0; i < particles; i++) {
+    const phi = Math.acos(2 * Math.random() - 1);
+    const theta = 2 * Math.PI * Math.random();
+    const radius = 3;
+
+    const x = radius * Math.sin(phi) * Math.cos(theta);
+    const y = radius * Math.sin(phi) * Math.sin(theta);
+    const z = radius * Math.cos(phi);
+
+    positions[i * 3] = x;
+    positions[i * 3 + 1] = y;
+    positions[i * 3 + 2] = z;
+
+    const color = new THREE.Color(`hsl(${(i / particles) * 360}, 100%, 60%)`);
+    colors[i * 3] = color.r;
+    colors[i * 3 + 1] = color.g;
+    colors[i * 3 + 2] = color.b;
+  }
+
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+  const material = new THREE.PointsMaterial({ size: 0.035, vertexColors: true, transparent: true, opacity: 0.8 });
+  const particleSystem = new THREE.Points(geometry, material);
+  scene.add(particleSystem);
+  camera.position.z = 7;
+
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    particleSystem.rotation.y += 0.001 + mouseX * 0.01;
+    particleSystem.rotation.x += 0.001 + mouseY * 0.01;
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+</script></body>
+</html>
